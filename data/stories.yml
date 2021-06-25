@@ -1,0 +1,44 @@
+version: "2.0"
+
+stories:
+
+- story: story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_happy
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: send_email
+  - action: email_form
+  - active_loop: email_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: lakshmipathi25n@gmail.com
+  - slot_was_set:
+    - email: lakshmipathi25n@gmail.com
+  - slot_was_set:
+    - requested_slot: subject
+  - slot_was_set:
+    - subject: Advanced courses
+  - slot_was_set:
+    - subject: Advanced courses
+  - slot_was_set:
+    - requested_slot: message
+  - slot_was_set:
+    - message: Check advance courses
+  - slot_was_set:
+    - message: Check advance courses
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slot_values
+  - intent: affirm
+  - action: action_submit 

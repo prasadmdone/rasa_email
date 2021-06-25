@@ -1,0 +1,65 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- send_email
+- affirm
+- message
+- email
+- subject
+- goodbye
+- deny
+entities:
+- email
+- message
+- subject
+slots:
+  email:
+    type: text
+    influence_conversation: true
+  subject:
+    type: text
+    influence_conversation: true
+  message:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hi, how can I help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_ask_email:
+  - text: what is your email id
+  utter_ask_subject:
+  - text: Please provide subject for your email
+  utter_ask_message:
+  - text: Please provide message for your email
+  utter_submit:
+  - text: Okay,thanks.
+  utter_slot_values:
+  - text: |-
+      The contents of email are,
+        - email: {email}
+        - subject: {subject}
+        - message: {message}
+      Do you want me to proceed?
+  utter_goodbye:
+  - text: Bye
+actions:
+- action_SendEmail
+- utter_greet
+- utter_slot_values
+- utter_submit
+forms:
+  email_form:
+    email:
+    - entity: email
+      type: from_entity
+    subject:
+    - entity: subject
+      type: from_entity
+    message:
+    - entity: message
+      type: from_entity

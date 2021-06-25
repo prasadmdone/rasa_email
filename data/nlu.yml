@@ -1,0 +1,81 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: send_email
+  examples: |
+    - I want to send an email
+    - send email
+    - email
+    - send an email
+    - I would like to send email
+- intent: email
+  examples: |
+    - [prasad123@gmail.com](email)
+    - [lakshmi123@gmail.com](email)
+    - [rama321@gmail.com](email)
+    - [raju@gmail.com](email)
+    - [baby123@gmail](email)
+    - [lakshmipathi25n@gmail.com](email)
+- intent: subject
+  examples: |
+    - [Regarding the resume](subject)
+    - [courses information](subject)
+    - [Advanced courses](subject)
+    - [training programs](subject)
+    - [Teaching courses](subject)
+    - [Advanced courses](subject)
+- intent: message
+  examples: |
+    - [Check latest AI courses?](message)
+    - [Check latest courses information](message)
+    - [Check Advanced courses](message)
+    - [Check training programs offered by company](message)
+    - [Check Teaching courses](message)
+    - [Check advance courses](message)
+- regex: email
+  examples: |
+    - ^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$
